@@ -1,0 +1,449 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Joice Rocha | Nutricionista</title>
+  <meta name="description" content="Acompanhamento nutricional para mulheres que desejam emagrecer com saúde, leveza e uma alimentação possível de manter.">
+  <meta name="theme-color" content="#231a17">
+  <link rel="preconnect" href="https://static.wixstatic.com">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23231a17'/%3E%3Cpath d='M18 37c10 1 19-5 24-17 5 16-3 27-18 27-5 0-8-4-6-10Z' fill='%23e4a76e'/%3E%3Cpath d='M23 42c4-8 9-13 18-18' fill='none' stroke='%23fff8ef' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+  <style>
+    :root {
+      --ink: #231a17;
+      --ink-soft: #5f5049;
+      --paper: #fffaf4;
+      --cream: #f5eadf;
+      --sand: #ead6c2;
+      --copper: #b96635;
+      --copper-dark: #914823;
+      --gold: #dda166;
+      --white: #ffffff;
+      --line: rgba(35, 26, 23, .13);
+      --shadow: 0 24px 70px rgba(55, 33, 22, .14);
+      --radius: 28px;
+      --serif: "Iowan Old Style", "Baskerville", "Times New Roman", serif;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--paper);
+      font-family: var(--sans);
+      font-size: 16px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+    body.menu-open { overflow: hidden; }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    button, a { -webkit-tap-highlight-color: transparent; }
+    :focus-visible { outline: 3px solid var(--gold); outline-offset: 4px; }
+    .skip-link { position: fixed; left: 16px; top: -100px; z-index: 100; background: var(--ink); color: white; padding: 10px 16px; border-radius: 10px; }
+    .skip-link:focus { top: 16px; }
+    .container { width: min(1160px, calc(100% - 40px)); margin-inline: auto; }
+    .eyebrow { display: inline-flex; align-items: center; gap: 10px; margin: 0 0 18px; color: var(--copper-dark); font-size: .79rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .eyebrow::before { content: ""; width: 28px; height: 1px; background: currentColor; }
+    h1, h2, h3, p { margin-top: 0; }
+    h1, h2, h3 { text-wrap: balance; }
+    h1, h2 { font-family: var(--serif); font-weight: 500; line-height: .98; letter-spacing: -.04em; }
+    h1 { font-size: clamp(3rem, 7vw, 6.4rem); margin-bottom: 26px; }
+    h2 { font-size: clamp(2.45rem, 5vw, 4.6rem); margin-bottom: 22px; }
+    h3 { font-size: 1.15rem; line-height: 1.25; }
+    .lead { max-width: 660px; color: var(--ink-soft); font-size: clamp(1.08rem, 2vw, 1.25rem); }
+    .button { display: inline-flex; min-height: 54px; align-items: center; justify-content: center; gap: 10px; padding: 14px 24px; border: 1px solid transparent; border-radius: 999px; text-decoration: none; font-size: .95rem; font-weight: 800; transition: transform .2s ease, background .2s ease, color .2s ease, box-shadow .2s ease; }
+    .button:hover { transform: translateY(-2px); }
+    .button-primary { color: #fff; background: var(--copper); box-shadow: 0 12px 32px rgba(185, 102, 53, .26); }
+    .button-primary:hover { background: var(--copper-dark); }
+    .button-secondary { border-color: var(--line); background: rgba(255,255,255,.72); }
+    .button-secondary:hover { background: var(--white); }
+    .button svg { width: 18px; height: 18px; flex: none; }
+
+    .site-header { position: sticky; top: 0; z-index: 50; border-bottom: 1px solid rgba(35,26,23,.09); background: rgba(255,250,244,.88); backdrop-filter: blur(16px); }
+    .nav { min-height: 82px; display: flex; align-items: center; justify-content: space-between; gap: 30px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; }
+    .brand-mark { width: 43px; height: 43px; border: 1px solid var(--line); border-radius: 50%; display: grid; place-items: center; background: white; }
+    .brand-mark img { width: 38px; height: 38px; object-fit: contain; }
+    .brand-copy { line-height: 1.05; }
+    .brand-copy strong { display: block; font-family: var(--serif); font-size: 1.28rem; font-weight: 600; }
+    .brand-copy span { color: var(--ink-soft); font-size: .68rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
+    .nav-links { display: flex; align-items: center; gap: 28px; }
+    .nav-links > a:not(.button) { color: var(--ink-soft); text-decoration: none; font-size: .91rem; font-weight: 700; }
+    .nav-links > a:not(.button):hover { color: var(--copper-dark); }
+    .menu-button { display: none; width: 46px; height: 46px; place-items: center; border: 1px solid var(--line); border-radius: 50%; background: white; }
+    .menu-button span, .menu-button::before, .menu-button::after { content: ""; width: 19px; height: 2px; background: var(--ink); display: block; transition: .2s ease; }
+    .menu-button span { margin: 4px 0; }
+    .menu-button[aria-expanded="true"] span { opacity: 0; }
+    .menu-button[aria-expanded="true"]::before { transform: translateY(6px) rotate(45deg); }
+    .menu-button[aria-expanded="true"]::after { transform: translateY(-6px) rotate(-45deg); }
+
+    .hero { position: relative; overflow: hidden; padding: 76px 0 92px; }
+    .hero::before { content: ""; position: absolute; width: 580px; height: 580px; right: -180px; top: -220px; border-radius: 50%; background: radial-gradient(circle, rgba(221,161,102,.3), rgba(221,161,102,0) 68%); pointer-events: none; }
+    .hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: clamp(48px, 8vw, 108px); align-items: center; }
+    .hero h1 span { color: var(--copper); font-style: italic; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin: 34px 0 32px; }
+    .hero-proof { display: flex; flex-wrap: wrap; align-items: center; gap: 13px 24px; color: var(--ink-soft); font-size: .88rem; }
+    .hero-proof span { display: flex; align-items: center; gap: 8px; }
+    .hero-proof svg { width: 17px; height: 17px; color: var(--copper); }
+    .hero-visual { position: relative; min-height: 580px; }
+    .photo-shell { position: absolute; inset: 0 24px 34px 0; overflow: hidden; border-radius: 220px 220px 30px 30px; background: var(--sand); box-shadow: var(--shadow); }
+    .photo-shell img { width: 100%; height: 100%; object-fit: cover; object-position: 54% center; }
+    .photo-shell::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, transparent 55%, rgba(35,26,23,.22)); }
+    .metric-card { position: absolute; right: -12px; bottom: 0; width: min(290px, 72%); padding: 21px; border: 1px solid rgba(255,255,255,.72); border-radius: 22px; background: rgba(255,250,244,.94); box-shadow: 0 20px 60px rgba(46,27,20,.18); backdrop-filter: blur(14px); }
+    .metric-card strong { display: block; margin-bottom: 5px; font-family: var(--serif); font-size: 1.45rem; }
+    .metric-card p { margin: 0; color: var(--ink-soft); font-size: .86rem; line-height: 1.45; }
+    .leaf-stamp { position: absolute; left: -38px; top: 70px; width: 94px; height: 94px; border-radius: 50%; display: grid; place-items: center; color: white; background: var(--ink); box-shadow: 0 14px 35px rgba(35,26,23,.22); }
+    .leaf-stamp svg { width: 43px; height: 43px; }
+
+    .quick-band { background: var(--ink); color: white; }
+    .quick-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+    .quick-item { min-height: 132px; padding: 28px clamp(20px, 3vw, 42px); display: flex; align-items: center; gap: 18px; border-right: 1px solid rgba(255,255,255,.12); }
+    .quick-item:last-child { border: 0; }
+    .quick-icon { width: 46px; height: 46px; flex: none; display: grid; place-items: center; border-radius: 50%; color: var(--gold); background: rgba(255,255,255,.08); }
+    .quick-icon svg { width: 22px; height: 22px; }
+    .quick-item strong { display: block; margin-bottom: 3px; font-family: var(--serif); font-size: 1.15rem; font-weight: 500; }
+    .quick-item span { color: rgba(255,255,255,.66); font-size: .82rem; }
+
+    section { padding: 112px 0; }
+    .section-intro { display: grid; grid-template-columns: .8fr 1.2fr; gap: 50px; align-items: end; margin-bottom: 54px; }
+    .section-intro p { margin-bottom: 4px; }
+
+    .fit-section { background: var(--white); }
+    .fit-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .fit-card { position: relative; min-height: 210px; padding: 30px 30px 30px 92px; border: 1px solid var(--line); border-radius: 22px; background: var(--paper); transition: transform .25s ease, box-shadow .25s ease; }
+    .fit-card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(45,31,24,.08); }
+    .fit-number { position: absolute; left: 28px; top: 27px; width: 43px; height: 43px; display: grid; place-items: center; border-radius: 50%; color: white; background: var(--copper); font-size: .82rem; font-weight: 900; }
+    .fit-card h3 { margin-bottom: 12px; }
+    .fit-card p { margin: 0; color: var(--ink-soft); }
+
+    .benefits { overflow: hidden; }
+    .benefit-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 80px; align-items: center; }
+    .benefit-visual { position: relative; min-height: 610px; border-radius: var(--radius); overflow: hidden; background: var(--cream); }
+    .benefit-visual img { width: 100%; height: 100%; object-fit: cover; position: absolute; inset: 0; }
+    .benefit-visual::after { content: "Acompanhamento próximo • Estratégias possíveis •"; position: absolute; left: -68px; bottom: 74px; padding: 13px 24px; color: white; background: var(--copper); font-size: .75rem; font-weight: 900; letter-spacing: .08em; text-transform: uppercase; transform: rotate(-90deg); }
+    .benefit-list { display: grid; gap: 0; margin-top: 34px; }
+    .benefit-item { display: grid; grid-template-columns: 44px 1fr; gap: 17px; padding: 20px 0; border-bottom: 1px solid var(--line); }
+    .benefit-item:first-child { border-top: 1px solid var(--line); }
+    .benefit-check { width: 35px; height: 35px; display: grid; place-items: center; border-radius: 50%; color: var(--copper-dark); background: var(--sand); }
+    .benefit-check svg { width: 17px; height: 17px; }
+    .benefit-item strong { display: block; margin: 2px 0 5px; }
+    .benefit-item p { margin: 0; color: var(--ink-soft); font-size: .91rem; }
+
+    .testimonials { color: white; background: var(--ink); }
+    .testimonials .eyebrow { color: var(--gold); }
+    .testimonials .lead { color: rgba(255,255,255,.64); }
+    .testimonial-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .testimonial-card { min-height: 360px; overflow: hidden; border: 1px solid rgba(255,255,255,.12); border-radius: 22px; background: rgba(255,255,255,.06); }
+    .testimonial-card img { width: 100%; height: 100%; object-fit: contain; padding: 18px; filter: saturate(.65); transition: filter .25s ease, transform .25s ease; }
+    .testimonial-card:hover img { filter: saturate(1); transform: scale(1.02); }
+    .privacy-note { margin: 22px 0 0; color: rgba(255,255,255,.48); font-size: .78rem; }
+
+    .bonuses { background: var(--cream); }
+    .bonus-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .bonus-card { min-height: 350px; padding: 30px; display: flex; flex-direction: column; border: 1px solid rgba(35,26,23,.09); border-radius: var(--radius); background: var(--paper); }
+    .bonus-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; margin-bottom: auto; }
+    .bonus-icon { width: 66px; height: 66px; display: grid; place-items: center; border-radius: 22px; color: var(--copper-dark); background: var(--sand); }
+    .bonus-icon svg { width: 30px; height: 30px; }
+    .bonus-index { color: #a48f82; font-family: var(--serif); font-size: 2rem; }
+    .bonus-card h3 { margin: 38px 0 10px; font-family: var(--serif); font-size: 1.65rem; font-weight: 500; }
+    .bonus-card p { margin: 0; color: var(--ink-soft); }
+
+    .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: clamp(50px, 9vw, 120px); align-items: center; }
+    .portrait { position: relative; aspect-ratio: 4/5; overflow: hidden; border-radius: 220px 220px 26px 26px; background: var(--sand); }
+    .portrait img { width: 100%; height: 100%; object-fit: cover; }
+    .portrait::after { content: "Nutrição com leveza"; position: absolute; left: 20px; right: 20px; bottom: 20px; padding: 14px 18px; border-radius: 14px; color: white; background: rgba(35,26,23,.72); text-align: center; font-family: var(--serif); font-size: 1.1rem; backdrop-filter: blur(10px); }
+    .about-copy .lead { margin-bottom: 23px; }
+    .about-copy p:not(.eyebrow):not(.lead) { color: var(--ink-soft); }
+    .credential { margin: 30px 0; padding: 19px 0; display: flex; align-items: center; gap: 14px; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+    .credential svg { width: 25px; height: 25px; color: var(--copper); flex: none; }
+    .credential strong { display: block; }
+    .credential span { color: var(--ink-soft); font-size: .86rem; }
+
+    .faq { background: var(--white); }
+    .faq-grid { display: grid; grid-template-columns: .7fr 1.3fr; gap: 70px; }
+    .faq-sticky { position: sticky; top: 120px; align-self: start; }
+    .faq-list { border-top: 1px solid var(--line); }
+    .faq-item { border-bottom: 1px solid var(--line); }
+    .faq-question { width: 100%; padding: 25px 0; display: flex; align-items: center; justify-content: space-between; gap: 25px; border: 0; color: var(--ink); background: transparent; text-align: left; font: 750 1rem/1.4 var(--sans); cursor: pointer; }
+    .faq-question span:last-child { width: 28px; height: 28px; flex: none; display: grid; place-items: center; border: 1px solid var(--line); border-radius: 50%; transition: transform .2s ease, background .2s ease; }
+    .faq-question[aria-expanded="true"] span:last-child { color: white; background: var(--copper); transform: rotate(45deg); }
+    .faq-answer { display: grid; grid-template-rows: 0fr; transition: grid-template-rows .25s ease; }
+    .faq-answer > div { overflow: hidden; }
+    .faq-answer p { margin: 0; padding: 0 55px 24px 0; color: var(--ink-soft); }
+    .faq-question[aria-expanded="true"] + .faq-answer { grid-template-rows: 1fr; }
+
+    .cta-section { padding: 36px 0 100px; background: var(--white); }
+    .cta-box { position: relative; overflow: hidden; padding: clamp(42px, 7vw, 82px); border-radius: 34px; color: white; background: var(--copper); }
+    .cta-box::after { content: ""; position: absolute; width: 340px; height: 340px; right: -75px; bottom: -160px; border: 1px solid rgba(255,255,255,.3); border-radius: 50%; box-shadow: 0 0 0 40px rgba(255,255,255,.05), 0 0 0 80px rgba(255,255,255,.04); }
+    .cta-box h2 { max-width: 800px; margin-bottom: 24px; }
+    .cta-box p { max-width: 630px; color: rgba(255,255,255,.8); font-size: 1.08rem; }
+    .cta-box .button { position: relative; z-index: 1; margin-top: 18px; color: var(--ink); background: white; }
+
+    footer { padding: 56px 0 90px; color: rgba(255,255,255,.68); background: var(--ink); }
+    .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 60px; }
+    .footer-brand { color: white; font-family: var(--serif); font-size: 1.65rem; }
+    footer h3 { color: white; font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; }
+    footer a { display: block; width: fit-content; margin: 7px 0; color: rgba(255,255,255,.68); text-decoration: none; }
+    footer a:hover { color: white; }
+    .footer-bottom { margin-top: 48px; padding-top: 22px; display: flex; justify-content: space-between; gap: 20px; border-top: 1px solid rgba(255,255,255,.11); font-size: .76rem; }
+    .whatsapp-float { position: fixed; z-index: 40; right: 22px; bottom: 22px; width: 58px; height: 58px; display: grid; place-items: center; border-radius: 50%; color: white; background: #1eac61; box-shadow: 0 12px 35px rgba(20,113,65,.35); transition: transform .2s ease; }
+    .whatsapp-float:hover { transform: translateY(-3px) scale(1.03); }
+    .whatsapp-float svg { width: 28px; height: 28px; }
+
+    @media (max-width: 920px) {
+      .menu-button { display: grid; }
+      .nav-links { position: fixed; inset: 82px 0 auto; padding: 28px 24px 34px; display: none; flex-direction: column; align-items: stretch; gap: 18px; border-bottom: 1px solid var(--line); background: var(--paper); box-shadow: 0 22px 50px rgba(35,26,23,.12); }
+      .nav-links.open { display: flex; }
+      .nav-links > a:not(.button) { padding: 7px 4px; font-size: 1.05rem; }
+      .hero-grid, .benefit-grid, .about-grid, .faq-grid { grid-template-columns: 1fr; }
+      .hero { padding-top: 56px; }
+      .hero-copy { max-width: 720px; }
+      .hero-visual { min-height: 620px; max-width: 590px; width: 90%; margin: 0 auto; }
+      .section-intro { grid-template-columns: 1fr; gap: 8px; }
+      .benefit-grid { gap: 45px; }
+      .benefit-visual { min-height: 530px; order: 2; }
+      .testimonial-grid, .bonus-grid { grid-template-columns: 1fr 1fr; }
+      .testimonial-card:last-child, .bonus-card:last-child { grid-column: 1 / -1; }
+      .about-grid { max-width: 760px; margin: auto; }
+      .portrait { width: min(520px, 82%); margin: auto; }
+      .faq-sticky { position: static; }
+      .footer-grid { grid-template-columns: 1.2fr .8fr; }
+      .footer-grid > div:first-child { grid-column: 1 / -1; }
+    }
+
+    @media (max-width: 680px) {
+      .container { width: min(100% - 28px, 1160px); }
+      .brand-copy span { display: none; }
+      .nav { min-height: 72px; }
+      .nav-links { top: 72px; }
+      h1 { font-size: clamp(2.8rem, 14vw, 4.5rem); }
+      h2 { font-size: clamp(2.25rem, 11vw, 3.4rem); }
+      section { padding: 82px 0; }
+      .hero { padding: 45px 0 72px; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .hero-proof { align-items: flex-start; flex-direction: column; }
+      .hero-visual { min-height: 485px; width: 100%; margin-top: 4px; }
+      .photo-shell { inset: 0 12px 28px 0; border-radius: 160px 160px 24px 24px; }
+      .leaf-stamp { left: -4px; top: 34px; width: 70px; height: 70px; }
+      .leaf-stamp svg { width: 34px; height: 34px; }
+      .metric-card { right: 0; padding: 17px; }
+      .metric-card strong { font-size: 1.17rem; }
+      .quick-grid { grid-template-columns: 1fr; }
+      .quick-item { min-height: 105px; border-right: 0; border-bottom: 1px solid rgba(255,255,255,.12); }
+      .fit-grid, .testimonial-grid, .bonus-grid { grid-template-columns: 1fr; }
+      .fit-card { min-height: 0; padding: 26px 24px 26px 78px; }
+      .fit-number { left: 22px; top: 23px; }
+      .testimonial-card, .testimonial-card:last-child, .bonus-card:last-child { grid-column: auto; }
+      .benefit-visual { min-height: 430px; }
+      .bonus-card { min-height: 300px; }
+      .portrait { width: 100%; }
+      .cta-section { padding: 18px 0 74px; }
+      .cta-box { border-radius: 26px; }
+      .footer-grid { grid-template-columns: 1fr; gap: 34px; }
+      .footer-grid > div:first-child { grid-column: auto; }
+      .footer-bottom { flex-direction: column; }
+      .whatsapp-float { width: 54px; height: 54px; right: 16px; bottom: 16px; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container nav">
+      <a class="brand" href="#inicio" aria-label="Joice Rocha Nutricionista — início">
+        <span class="brand-mark"><img src="https://static.wixstatic.com/media/630c67_be185c375071415dad7b44052b6ecb06~mv2.png" alt=""></span>
+        <span class="brand-copy"><strong>Joice Rocha</strong><span>Nutricionista</span></span>
+      </a>
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu-principal"><span></span></button>
+      <nav class="nav-links" id="menu-principal" aria-label="Navegação principal">
+        <a href="#acompanhamento">Acompanhamento</a>
+        <a href="#beneficios">Benefícios</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#duvidas">Dúvidas</a>
+        <a class="button button-primary" href="https://api.whatsapp.com/send?phone=5512991115874&amp;text=Oi%20Nutri!%20Quero%20agendar%20uma%20consulta!" target="_blank" rel="noopener">Agendar consulta</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Nutrição feminina sem radicalismos</p>
+          <h1>Emagreça com saúde. <span>Viva com leveza.</span></h1>
+          <p class="lead">Um acompanhamento nutricional pensado para sua rotina, seus gostos e seus objetivos — sem dietas impossíveis e sem perder o prazer de comer.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="https://api.whatsapp.com/send?phone=5512991115874&amp;text=Oi%20Nutri!%20Quero%20agendar%20uma%20consulta!" target="_blank" rel="noopener">
+              Conversar pelo WhatsApp
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 14 0M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="button button-secondary" href="#acompanhamento">Conhecer o acompanhamento</a>
+          </div>
+          <div class="hero-proof" aria-label="Diferenciais do acompanhamento">
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Plano alimentar personalizado</span>
+            <span><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="m5 12 4 4L19 6"/></svg> Suporte semanal</span>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Nutricionista Joice Rocha em seu consultório">
+          <div class="photo-shell"><img src="https://static.wixstatic.com/media/630c67_6b88bb1cf4164afd99cee85f0d305a16f000.jpg" alt="Nutricionista Joice Rocha em seu consultório"></div>
+          <div class="leaf-stamp" aria-hidden="true"><svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 42C8 28 22 12 48 14c1 25-14 39-30 28Z"/><path d="M17 47c8-16 16-23 30-31"/></svg></div>
+          <div class="metric-card"><strong>Estratégias que cabem na sua vida</strong><p>Alimentação mais natural, organizada e possível de manter no longo prazo.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <div class="quick-band" aria-label="Informações rápidas">
+      <div class="container quick-grid">
+        <div class="quick-item"><span class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><strong>Consulta completa</strong><span>De 1h a 1h30 de duração</span></div></div>
+        <div class="quick-item"><span class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 18V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H9l-5 3v-3Z"/></svg></span><div><strong>Suporte próximo</strong><span>Acompanhamento semanal pelo WhatsApp</span></div></div>
+        <div class="quick-item"><span class="quick-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20h16M7 17V9m5 8V4m5 13v-6"/></svg></span><div><strong>Evolução mensurável</strong><span>Bioimpedância e metas acompanhadas</span></div></div>
+      </div>
+    </div>
+
+    <section class="fit-section" id="acompanhamento">
+      <div class="container">
+        <div class="section-intro">
+          <div><p class="eyebrow">Para quem é</p><h2>Seu objetivo merece um caminho possível</h2></div>
+          <p class="lead">O acompanhamento é indicado para mulheres que querem resultados consistentes e uma relação mais tranquila com a alimentação.</p>
+        </div>
+        <div class="fit-grid">
+          <article class="fit-card"><span class="fit-number">01</span><h3>Quer emagrecer sem passar fome</h3><p>Para quem deseja perder gordura corporal e recuperar a satisfação com o próprio corpo e a saúde.</p></article>
+          <article class="fit-card"><span class="fit-number">02</span><h3>Já tentou outras dietas</h3><p>Para quem já viveu o efeito sanfona ou sente que os resultados estagnaram mesmo tentando fazer tudo certo.</p></article>
+          <article class="fit-card"><span class="fit-number">03</span><h3>Precisa cuidar de condições específicas</h3><p>Para quem busca melhorar a alimentação diante de SOP, diabetes, hipertensão e outras condições, com orientação individual.</p></article>
+          <article class="fit-card"><span class="fit-number">04</span><h3>Busca mais massa e definição</h3><p>Para quem deseja ganhar massa muscular ou preservá-la enquanto reduz gordura corporal.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="benefits" id="beneficios">
+      <div class="container benefit-grid">
+        <div class="benefit-visual"><img src="https://static.wixstatic.com/media/630c67_7efa941d932847cfb938fef779bcb09d~mv2.png" alt="Nutricionista Joice Rocha"></div>
+        <div>
+          <p class="eyebrow">O que você recebe</p>
+          <h2>Mais do que uma dieta pronta</h2>
+          <p class="lead">A consulta transforma suas dificuldades reais em estratégias simples, personalizadas e acompanhadas de perto.</p>
+          <div class="benefit-list">
+            <div class="benefit-item"><span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg></span><div><strong>Cardápio feito para você</strong><p>Alimentos que você gosta, nos seus horários e dentro da sua rotina.</p></div></div>
+            <div class="benefit-item"><span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg></span><div><strong>Alimentação leve e natural</strong><p>Um caminho para emagrecer sem passar fome e sem abrir mão do prazer.</p></div></div>
+            <div class="benefit-item"><span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg></span><div><strong>Apoio entre as consultas</strong><p>Motivação, acompanhamento semanal e dúvidas respondidas pelo WhatsApp.</p></div></div>
+            <div class="benefit-item"><span class="benefit-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="m5 12 4 4L19 6"/></svg></span><div><strong>Avaliação da composição corporal</strong><p>Acompanhamento de gordura e massa muscular por bioimpedância.</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="testimonials" id="resultados">
+      <div class="container">
+        <div class="section-intro">
+          <div><p class="eyebrow">Experiências reais</p><h2>Pequenas mudanças. Grandes conquistas.</h2></div>
+          <p class="lead">Mensagens de pacientes que encontraram no acompanhamento um jeito mais leve de cuidar da alimentação.</p>
+        </div>
+        <div class="testimonial-grid" aria-label="Depoimentos de pacientes">
+          <figure class="testimonial-card"><img src="https://static.wixstatic.com/media/630c67_36816227ca05419c8c07117a8cd5eede~mv2.png" alt="Depoimento de paciente sobre o acompanhamento nutricional"></figure>
+          <figure class="testimonial-card"><img src="https://static.wixstatic.com/media/630c67_49f8b44d9646416bbadc6a11b50b5da7~mv2.png" alt="Depoimento de paciente sobre resultados alcançados"></figure>
+          <figure class="testimonial-card"><img src="https://static.wixstatic.com/media/630c67_950945a7b7594ebd8f4ffe6f0f98020c~mv2.png" alt="Depoimento de paciente sobre o plano alimentar"></figure>
+        </div>
+        <p class="privacy-note">Depoimentos compartilhados no site original. Resultados variam de pessoa para pessoa.</p>
+      </div>
+    </section>
+
+    <section class="bonuses">
+      <div class="container">
+        <div class="section-intro">
+          <div><p class="eyebrow">Bônus do acompanhamento</p><h2>Ferramentas para continuar no caminho</h2></div>
+          <p class="lead">Materiais práticos para organizar as escolhas, variar as refeições e acompanhar suas metas.</p>
+        </div>
+        <div class="bonus-grid">
+          <article class="bonus-card"><div class="bonus-top"><span class="bonus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M5 3h11a3 3 0 0 1 3 3v15H7a2 2 0 0 1-2-2V3Z"/><path d="M7 17h12M8 7h7M8 11h6"/></svg></span><span class="bonus-index">01</span></div><h3>E-book Comer + Leve</h3><p>50 receitas para trazer mais sabor, variedade e praticidade ao dia a dia.</p></article>
+          <article class="bonus-card"><div class="bonus-top"><span class="bonus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M8 3v4m8-4v4M4 10h16m-12 4h3m2 0h3m-8 3h3"/></svg></span><span class="bonus-index">02</span></div><h3>Kit organização</h3><p>Planner semanal, lista de compras e modelo de cardápio para facilitar sua rotina.</p></article>
+          <article class="bonus-card"><div class="bonus-top"><span class="bonus-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="7" y="2" width="10" height="20" rx="2"/><path d="M10 6h4m-4 5 2 2 3-4m-5 9h4"/></svg></span><span class="bonus-index">03</span></div><h3>Aplicativo exclusivo</h3><p>Seu plano alimentar, lembretes e metas reunidos para acompanhar a evolução.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="container about-grid">
+        <div class="portrait"><img src="https://static.wixstatic.com/media/630c67_7efa941d932847cfb938fef779bcb09d~mv2.png" alt="Retrato da nutricionista Joice Rocha"></div>
+        <div class="about-copy">
+          <p class="eyebrow">Prazer, Joice</p>
+          <h2>Ciência, acolhimento e estratégias que fazem sentido</h2>
+          <p class="lead">Sou nutricionista, pós-graduada em Alimentos Funcionais e Nutrigenômica, e ajudo mulheres a emagrecer, recuperar a autoestima e cuidar da saúde.</p>
+          <p>Acredito que uma alimentação saudável deve ser vivida sem radicalismos ou modismos. É possível conquistar resultados sem dietas extremamente restritivas e sem perder o prazer pela comida.</p>
+          <div class="credential"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m12 3 2.5 5 5.5.8-4 3.9.9 5.5-4.9-2.6-4.9 2.6.9-5.5-4-3.9 5.5-.8L12 3Z"/></svg><div><strong>Pós-graduação em Alimentos Funcionais e Nutrigenômica</strong><span>Atendimento individualizado e baseado nas necessidades de cada paciente</span></div></div>
+          <a class="button button-primary" href="https://api.whatsapp.com/send?phone=5512991115874&amp;text=Oi%20Nutri!%20Gostaria%20de%20saber%20mais%20sobre%20a%20consulta" target="_blank" rel="noopener">Quero saber mais</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="faq" id="duvidas">
+      <div class="container faq-grid">
+        <div class="faq-sticky"><p class="eyebrow">Dúvidas frequentes</p><h2>Antes de começar</h2><p class="lead">As principais informações sobre consulta, duração, pagamento e reembolso.</p></div>
+        <div class="faq-list">
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="true"><span>Você atende algum convênio?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>O atendimento é particular para preservar a qualidade e o tempo de consulta. É possível solicitar recibo e/ou relatório para pedir reembolso à operadora do seu plano de saúde, conforme as regras do contrato.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Qual é a duração da consulta?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>A consulta dura, em média, de 1 hora a 1 hora e 30 minutos. Esse tempo permite entender suas dificuldades, rotina e objetivos para definir estratégias personalizadas.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Qual é o valor da consulta?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>Para informações atualizadas sobre valores e formas de pagamento, fale diretamente com a Joice pelo WhatsApp.</p></div></div></div>
+          <div class="faq-item"><button class="faq-question" type="button" aria-expanded="false"><span>Como recebo o plano alimentar?</span><span aria-hidden="true">+</span></button><div class="faq-answer"><div><p>O plano e as orientações ficam disponíveis no aplicativo exclusivo, junto de lembretes e metas para facilitar o acompanhamento.</p></div></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <p class="eyebrow" style="color:#fff">Seu próximo passo</p>
+          <h2>Comece a cuidar de você sem esperar a rotina perfeita.</h2>
+          <p>Conte para a Joice qual é o seu objetivo e receba as informações sobre o acompanhamento.</p>
+          <a class="button" href="https://api.whatsapp.com/send?phone=5512991115874&amp;text=Oi%20Nutri!%20Quero%20agendar%20uma%20consulta!" target="_blank" rel="noopener">Agendar pelo WhatsApp <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 12 14 0M13 6l6 6-6 6"/></svg></a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div><div class="footer-brand">Joice Rocha</div><p>Nutrição para emagrecer com saúde, leveza e constância.</p></div>
+        <div><h3>Navegação</h3><a href="#acompanhamento">Acompanhamento</a><a href="#beneficios">Benefícios</a><a href="#sobre">Sobre</a><a href="#duvidas">Dúvidas</a></div>
+        <div><h3>Contato</h3><a href="https://api.whatsapp.com/send?phone=5512991115874" target="_blank" rel="noopener">WhatsApp</a><a href="https://www.instagram.com/joicerochanutri" target="_blank" rel="noopener">Instagram</a><a href="http://www.facebook.com/nutrijoicerocha" target="_blank" rel="noopener">Facebook</a></div>
+      </div>
+      <div class="footer-bottom"><span>© <span id="year"></span> Joice Rocha Nutricionista.</span><span>Este site não substitui avaliação profissional individual.</span></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" href="https://api.whatsapp.com/send?phone=5512991115874&amp;text=Oi%20Nutri!%20Quero%20agendar%20uma%20consulta!" target="_blank" rel="noopener" aria-label="Agendar consulta pelo WhatsApp"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 11.5a8 8 0 0 1-11.8 7L4 20l1.5-4.1A8 8 0 1 1 20 11.5Z"/><path d="M8.3 8.2c.2-.5.4-.5.7-.5h.5c.2 0 .4 0 .5.4l.8 1.8c.1.3.1.5-.1.7l-.6.7c-.2.2-.1.4 0 .6.7 1.2 1.7 2.2 3 2.8.2.1.4.1.6-.1l.8-.9c.2-.2.4-.3.7-.1l1.8.8c.3.1.5.2.5.4.1.2.1 1-.2 1.6-.3.7-1.5 1.3-2.1 1.3-.6 0-1.5.2-4.4-1-3.5-1.5-5.7-5.1-5.9-5.4-.2-.3-1.4-1.9-1.4-3.6 0-1.7.9-2.6 1.3-3Z" transform="scale(.7) translate(5 5)"/></svg></a>
+
+  <script>
+    const menuButton = document.querySelector('.menu-button');
+    const navLinks = document.querySelector('.nav-links');
+    menuButton.addEventListener('click', () => {
+      const open = menuButton.getAttribute('aria-expanded') === 'true';
+      menuButton.setAttribute('aria-expanded', String(!open));
+      menuButton.setAttribute('aria-label', open ? 'Abrir menu' : 'Fechar menu');
+      navLinks.classList.toggle('open', !open);
+      document.body.classList.toggle('menu-open', !open);
+    });
+    navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Abrir menu');
+      navLinks.classList.remove('open');
+      document.body.classList.remove('menu-open');
+    }));
+    document.querySelectorAll('.faq-question').forEach(button => {
+      button.addEventListener('click', () => {
+        const expanded = button.getAttribute('aria-expanded') === 'true';
+        document.querySelectorAll('.faq-question').forEach(item => item.setAttribute('aria-expanded', 'false'));
+        button.setAttribute('aria-expanded', String(!expanded));
+      });
+    });
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
